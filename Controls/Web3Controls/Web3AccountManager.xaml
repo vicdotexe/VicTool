@@ -1,0 +1,23 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VicTool.Controls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="VicTool.Controls.Web3AccountManager"
+             mc:Ignorable="d" Height="114.492" Width="295.651"
+             x:Name="web3AccountManager">
+    <Grid Background="LightGray">
+        <TextBlock HorizontalAlignment="Left" Margin="7,10,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="7,38,0,0" TextWrapping="Wrap" Text="Private Key:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="7,66,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="23" Margin="94,9,0,0" TextWrapping="Wrap" Text="{Binding AccountName, ElementName=web3AccountManager}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxPrivateKey" HorizontalAlignment="Left" Height="23" Margin="94,37,0,0" TextWrapping="Wrap" Text="{Binding PrivateKey, ElementName=web3AccountManager}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxPassword" HorizontalAlignment="Left" Height="23" Margin="94,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="181,65,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click" Height="22"/>
+        <ListBox x:Name="listboxAccounts" HorizontalAlignment="Left" Height="78" Margin="219,31,0,0" VerticalAlignment="Top" Width="71" ItemsSource="{Binding Accounts, ElementName=web3AccountManager}" DisplayMemberPath="AccountName"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="219,6,0,0" VerticalAlignment="Top" Width="71" Click="Button_Click_1"/>
+        <Label x:Name="labelPublicKeyAccounts" Content="Public Key" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Margin="0,87,743,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</UserControl>

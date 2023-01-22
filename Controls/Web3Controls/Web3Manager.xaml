@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="VicTool.Controls.Web3Manager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VicTool.Controls"
+             mc:Ignorable="d" Height="186.232" Width="380.435">
+    <Grid Background="LightGray">
+        <TabControl HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="172" Width="366">
+            <TabItem Header="Connection">
+                <Grid Background="LightGray">
+                    <local:Web3ConnectionManager HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Transfer" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="54" Margin="0,0,0,0">
+                <Grid Background="LightGray">
+                    <local:MiniWallet HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Accounts">
+                <Grid Background="LightGray">
+
+                    <local:Web3AccountManager HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Networks" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="63">
+                <Grid Background="LightGray">
+                    <local:Web3RpcManager HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Contracts" HorizontalAlignment="Left" Width="65">
+                <Grid Background="LightGray">
+                    <local:Web3ContractManager HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+    </Grid>
+</UserControl>

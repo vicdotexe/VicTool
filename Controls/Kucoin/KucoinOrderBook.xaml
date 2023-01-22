@@ -1,0 +1,32 @@
+﻿<UserControl
+             x:Name="kucoinOrderBook"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VicTool.Controls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="VicTool.Controls.KucoinOrderBook"
+             mc:Ignorable="d" Height="474" Width="287">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="BackgroundDark" Color="#FF091221"/>
+    </UserControl.Resources>
+    <Viewbox Width="Auto" Height="Auto">
+        <Border CornerRadius="5" Background="LightGray"  BorderBrush="Black" BorderThickness="0.3" Width="282" Height="477">
+            <Grid x:Name="grid1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="dataGridBids" HorizontalAlignment="Left" Height="192" Margin="10,249,0,0" VerticalAlignment="Top" Width="264" HorizontalContentAlignment="Right" HeadersVisibility="None" FontFamily="{StaticResource URWDIN-Medium}" />
+                <DataGrid x:Name="dataGridAsks" HorizontalAlignment="Left" Height="192" Margin="10,36,0,0" VerticalAlignment="Top" Width="264" CanUserAddRows="False" HeadersVisibility="None" FontFamily="{StaticResource URWDIN-Medium}" />
+
+                <xctk:IntegerUpDown x:Name="intUpDownDecimals" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="16" Minimum="0" Value="{Binding Path=PriceDecimals}" Margin="73,449,0,0"/>
+                <Label Content="Decimals:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,446,0,0"/>
+                <ComboBox x:Name="comboBoxAsset" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" Height="21" SelectedValue="{Binding Path=CurrentPair}"/>
+                <xctk:IntegerUpDown x:Name="intUpDownQtyDecimals" HorizontalAlignment="Left" VerticalAlignment="Top" Maximum="16" Minimum="0"  Value="{Binding Path=QtyDecimals}"  Margin="233,449,0,0"/>
+                <Label Content="Qty Decimals:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="151,446,0,0"/>
+                <TextBlock x:Name="textBlockLastPrice" HorizontalAlignment="Left" Margin="11,230,0,0" TextWrapping="Wrap" Text="{Binding Path=LastPrice}" VerticalAlignment="Top" Width="74"/>
+
+            </Grid>
+        </Border>
+    </Viewbox>
+</UserControl>

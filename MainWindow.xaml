@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VicTool"
+        xmlns:Controls="clr-namespace:VicTool.Controls" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:Web3Controls="clr-namespace:VicTool.Controls.Web3Controls" x:Class="VicTool.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="806.124" Width="1193.689"
+        x:Name ="CoreWindow">
+    <Grid Margin="0,0,2,2" Background ="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="651"/>
+        </Grid.RowDefinitions>
+
+        <Controls:KucoinOrderBook x:Name="kucoinOrderBook" Height="468" Width="276" Margin="898,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1"/>
+
+        <Controls:SwapControl x:Name="SwapControl" Margin="10,205,0,0" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Width="291" BorderBrush="Black" BorderThickness="1"/>
+        <Controls:ConsoleControl HorizontalAlignment="Left" Height="151" Margin="11,587,0,-86" VerticalAlignment="Top" Width="306" BorderBrush="Black" BorderThickness="1"/>
+        <Controls:KucoinOrderPanel HorizontalAlignment="Left" Margin="847,493,0,-26" VerticalAlignment="Top" Height="185" Width="327" BorderBrush="Black" BorderThickness="1"/>
+        <CheckBox x:Name="checkBoxTG" Content="TG Enabled" HorizontalAlignment="Left" Height="18" Margin="237,587,0,0" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1"/>
+        <Controls:Web3Manager HorizontalAlignment="Left" Height="190" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Controls:ProfitSheet HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,54 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VicTool.Controls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="VicTool.Controls.ProfitSheet"
+             mc:Ignorable="d" Width="501" Height="407">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="labelKucoinPrice" Content="Label" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="400,39,0,0" VerticalAlignment="Top" Background="#FF418720" Width="91" FontSize="20"/>
+        <Label x:Name="labelSpread" Content="Label" HorizontalAlignment="Left" HorizontalContentAlignment="Center"  Margin="299,39,0,0" VerticalAlignment="Top" Width="91" FontSize="20">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF418720" Offset="1"/>
+                    <GradientStop Color="#FFFFDC00"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label x:Name="labelBuySellKucoin" Content="Label" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="400,2,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="91" FontSize="20"/>
+        <Label x:Name="labelDelta" Content="Label" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="299,2,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="91" FontSize="20"/>
+        <Label x:Name="labelBreakEvenTrade" Content="BreakEven TradeQty:" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelBreakEvenTradeValue" Content="%" HorizontalAlignment="Left" Margin="128,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.484,0.902"/>
+
+        <GroupBox x:Name="groupBoxPool" Header="Pool" HorizontalAlignment="Left" Height="85" Margin="10,2,0,0" VerticalAlignment="Top" Width="284">
+            <Grid>
+                <Label x:Name="labelEthPool" Content="Eth:" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,28,0,0"/>
+                <Label x:Name="labelTokenPoolQty" Content="qty" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,2,0,0"/>
+                <Label x:Name="labelEthPoolQty" Content="qty" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,28,0,0"/>
+                <Label x:Name="labelPancakePrice" Content="Label" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="174,20,0,0" VerticalAlignment="Top" Background="#FFFFDC00" Width="91" FontSize="20"/>
+                <Label x:Name="labelBuySellPancake" Content="Label" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="174,-19,0,0" VerticalAlignment="Top" Background="{x:Null}" Width="91" FontSize="20"/>
+                <ComboBox x:Name="comboBoxTargetToken" HorizontalAlignment="Left" Margin="7,6,0,0" VerticalAlignment="Top" Width="52"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Risk Calculations" HorizontalAlignment="Left" Height="244" Margin="10,118,0,0" VerticalAlignment="Top" Width="423">
+            <DataGrid x:Name="dataGridRisks" HorizontalAlignment="Left" Height="210" Margin="10,10,0,0" VerticalAlignment="Top" Width="394"/>
+
+        </GroupBox>
+
+        <xctk:DecimalUpDown x:Name="decimalUpDownCustomKucoin" HorizontalAlignment="Left" Margin="400,81,0,0" VerticalAlignment="Top" Width="91"/>
+        <xctk:IntegerUpDown x:Name="intUpDownUsdAlert" HorizontalAlignment="Left" Margin="10,379,0,0" VerticalAlignment="Top" Width="44" Value="20"/>
+        <xctk:IntegerUpDown x:Name="intUpDownSpamTimer" HorizontalAlignment="Left" Margin="170,379,0,0" VerticalAlignment="Top" Value="5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,383,0,0" TextWrapping="Wrap" Text="Profit Alert Value" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="216,383,0,0" TextWrapping="Wrap" Text="Alert De-Spammer (minutes)" VerticalAlignment="Top"/>
+
+    </Grid>
+
+
+</UserControl>

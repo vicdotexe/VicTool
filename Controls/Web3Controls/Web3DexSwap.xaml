@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="VicTool.Controls.Web3Controls.Web3DexSwap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VicTool.Controls.Web3Controls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:misc="clr-namespace:VicTool.Main.Misc"
+             mc:Ignorable="d" Width="292.535" Height="415.521">
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="53*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11"/>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="17"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="Auto" MinHeight="3"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="#00D3D3D3" Background="#3F808080" BorderThickness="1" Margin="0,4,0,13" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <Border BorderBrush="#00D3D3D3" Background="#3F808080" BorderThickness="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,3,0,0"/>
+        <xctk:DecimalUpDown x:Name="decimalUpDownOut" Margin="19,5,1,14" VerticalAlignment="Center" ShowButtonSpinner="False" Height="26" Grid.Row="3" Value="{Binding Path=AmountOut}">
+
+        </xctk:DecimalUpDown>
+        <xctk:DecimalUpDown x:Name="decimalUpDownSlippage" HorizontalAlignment="Right" Margin="0,8,20,0" VerticalAlignment="Top" Width="28" ShowButtonSpinner="False" Value="{Binding Path=Slippage}" Grid.Row="5" Grid.Column="2" Height="20"/>
+        <Label Content="%" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="5" Grid.Column="2" Height="26" Width="20" Margin="0,5,0,0" Grid.RowSpan="2"/>
+        <ComboBox x:Name="comboBoxIn" Margin="15,23,4,8" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="20" Grid.Row="1" Grid.Column="2" RenderTransformOrigin="0.223,0.507"/>
+        <ComboBox x:Name="comboBoxOut" Margin="15,9,4,14" VerticalAlignment="Center" Height="22" Grid.Row="3" Grid.Column="2"/>
+        <Label x:Name="labelMinimum" Content="Minimum&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Width="117" Grid.Row="6" Margin="0,6,0,0"/>
+        <Label x:Name="labePriceImpact" Content="Price Impact:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="117" Grid.Row="6" Margin="0,29,0,0"/>
+        <Label x:Name="labelInPrice" Content="In Price:&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Width="117" Margin="0,98,0,0" Grid.Row="6"/>
+        <Label x:Name="labelOutPrice" Content="Out Price:" HorizontalAlignment="Left" Margin="0,117,0,0" VerticalAlignment="Top" Height="23" Width="117" Grid.Row="6"/>
+        <Label x:Name="labelMinimumValue" Content="{Binding Path=MinimumAmount}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="124" HorizontalContentAlignment="Right" Grid.Row="6" Height="26" Grid.ColumnSpan="3" Margin="0,10,0,0"/>
+        <Label x:Name="labelPriceImpactValue" Content="{Binding Path=PriceImpact}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,29,0,0" Width="124" HorizontalContentAlignment="Right" Grid.Row="6" Height="26" Grid.ColumnSpan="3"/>
+        <Label x:Name="labelInPriceValue" Content="-" HorizontalAlignment="Right" VerticalAlignment="Top" Width="124" HorizontalContentAlignment="Right" Margin="0,98,0,0" Grid.Row="6" Height="26" Grid.ColumnSpan="3"/>
+        <Label x:Name="labelOutPriceValue" Content="-" HorizontalAlignment="Right" VerticalAlignment="Top" Width="124" HorizontalContentAlignment="Right" Margin="0,122,0,0" Grid.Row="6" Height="26" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <xctk:IntegerUpDown x:Name="integerUpDownGas" Grid.Column="2" HorizontalAlignment="Right" Grid.Row="7" VerticalAlignment="Top" Value="5" Height="20" Width="42" Margin="0,10,0,0"/>
+        <Label x:Name="labelGas" Content="Gas Gwei" HorizontalAlignment="Right" Margin="0,7,42,0" Grid.Row="7" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="26" Width="60" Grid.Column="1" Grid.RowSpan="2"/>
+        <RadioButton x:Name="radioButtonIn" GroupName="exact"  HorizontalAlignment="Left" Margin="0,25,0,12" Grid.Row="1" VerticalAlignment="Center" Height="14" Width="19" IsChecked="True"/>
+        <xctk:DecimalUpDown x:Name="decimalUpDownIn" HorizontalAlignment="Stretch" VerticalAlignment="Center" ShowButtonSpinner="False" Height="26" Grid.Row="1" Margin="19,17,1,8" Value="{Binding Path=AmountIn}"/>
+        <RadioButton x:Name="radioButtonOut" GroupName="exact" Content="" Margin="0,9,146,20" Grid.Row="3" VerticalAlignment="Center" Height="16"/>
+        <Label x:Name="labelInBalance" Content="-" HorizontalAlignment="Right" Margin="0,1,0,24" Grid.Row="1" VerticalAlignment="Center" Height="26" FontSize="10" RenderTransformOrigin="0.02,1.003" Grid.Column="2" Width="14"/>
+        <Label x:Name="labelOutBalance" Content="-" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="26" FontSize="10" Margin="0,8,0,28" RenderTransformOrigin="-0.177,-0.18" Grid.RowSpan="2" Grid.Column="2" Width="14"/>
+        <Label x:Name="labelInPerOut" Content="In per Out:" HorizontalAlignment="Left" Margin="0,52,0,0" Grid.Row="6" VerticalAlignment="Top" Width="117" Height="26"/>
+        <Label x:Name="labelOutPerIn" Content="Out per In:" HorizontalAlignment="Left" Margin="0,75,0,0" Grid.Row="6" VerticalAlignment="Top" Width="117" Height="26"/>
+        <Label x:Name="labelInPerOutValue" Content="{Binding Path=InPerOut}" HorizontalAlignment="Right" Margin="0,55,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="124" HorizontalContentAlignment="Right" Height="26"/>
+        <Label x:Name="labelOutPerInValue" Content="{Binding Path=OutPerIn}" HorizontalAlignment="Right" Margin="0,75,0,0" Grid.Row="6" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="124" HorizontalContentAlignment="Right" Height="26"/>
+        <Label Content="Slippage" Grid.Column="1" HorizontalAlignment="Right" Margin="0,5,46,138" Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="57" Height="26" Grid.RowSpan="2"/>
+        <Button x:Name="buttonSwap" Content="Swap" HorizontalAlignment="Center" Margin="46,9,51,0" Grid.Row="5" VerticalAlignment="Center" Width="76" Height="20" Click="buttonSwap_Click"/>
+        <Label x:Name="labelInvalidPair" Content="Pair Invalid&#xD;&#xA;(to do: implement routing)" Margin="0,13,0,42" Grid.Row="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Grid.ColumnSpan="3"/>
+        <Button x:Name="buttonFlip" Content="&lt;-&gt;" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="36" Height="17" Margin="129,2,0,0" Click="buttonFlip_Click" Grid.RowSpan="2"/>
+        <Label x:Name="labelRefreshTracker" Content="Label" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Top" Grid.RowSpan="2" Margin="0,7,0,0" Height="26" Width="117" RenderTransformOrigin="0.526,0.192"/>
+        <TextBox x:Name="textBoxSendTo" HorizontalAlignment="Left" Height="18" Margin="67,11,0,0" Grid.Row="8" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="209" Grid.ColumnSpan="3" FontSize="9"/>
+        <CheckBox x:Name="checkBoxSendTo" Content="Send To:" HorizontalAlignment="Left" Height="16" Margin="0,13,0,0" Grid.Row="8" VerticalAlignment="Top" Width="67"/>
+        <ComboBox x:Name="comboBoxDex" HorizontalAlignment="Left" Margin="145,21,0,0" Grid.Row="9" VerticalAlignment="Top" Width="140" Grid.ColumnSpan="3" Height="22"/>
+        <ComboBox x:Name="comboBoxNetwork" HorizontalAlignment="Left" Margin="0,21,0,0" Grid.Row="9" VerticalAlignment="Top" Width="140" Height="22"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,5,0,0" Grid.Row="9" TextWrapping="Wrap" Text="Network:" VerticalAlignment="Top" Height="16" Width="48"/>
+        <TextBlock HorizontalAlignment="Left" Margin="145,6,0,0" Grid.Row="9" TextWrapping="Wrap" Text="Dex:" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="58" Height="16"/>
+
+
+    </Grid>
+</UserControl>

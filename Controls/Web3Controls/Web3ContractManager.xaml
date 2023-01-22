@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="VicTool.Controls.Web3ContractManager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VicTool.Controls"
+             mc:Ignorable="d" Height="142.103" Width="315.03">
+    <Grid Background="LightGray">
+        <TabControl HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="307" Margin="4,5,0,0">
+            <TabItem Header="Tokens">
+                <Grid Background="#FFE5E5E5">
+                    <ListBox x:Name="listBoxTokens" HorizontalAlignment="Left" Height="82" Margin="227,10,0,0" VerticalAlignment="Top" Width="64"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,9,0,0" TextWrapping="Wrap" Text="Contract:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxTokenContract" HorizontalAlignment="Left" Height="23" Margin="10,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,53,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxTokenName" HorizontalAlignment="Left" Height="23" Margin="10,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="89,53,0,0" TextWrapping="Wrap" Text="Symbol:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxSymbol" HorizontalAlignment="Left" Height="23" Margin="89,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="136,53,0,0" TextWrapping="Wrap" Text="Decimals:" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBoxDecimals" HorizontalAlignment="Left" Height="23" Margin="136,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.461,5.595"/>
+                    <Button x:Name="buttonAddToken" Content="Add" HorizontalAlignment="Left" Margin="191,72,0,0" VerticalAlignment="Top" Width="31" RenderTransformOrigin="0.417,0.036"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="DEXs">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Margin="0,3,0,0"/>
+                    <TextBox x:Name="textBoxDexName" HorizontalAlignment="Left" Height="23" Margin="46,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Router:" VerticalAlignment="Top" Margin="0,31,0,0"/>
+                    <TextBox x:Name="textBoxRouter" HorizontalAlignment="Left" Height="23" Margin="46,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Factory:" VerticalAlignment="Top" Margin="0,59,0,0"/>
+                    <TextBox x:Name="textBoxFactory" HorizontalAlignment="Left" Height="23" Margin="46,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <ListBox x:Name="listBoxDexs" HorizontalAlignment="Left" Height="100" Margin="201,2,0,0" VerticalAlignment="Top" Width="100"/>
+                    <Button x:Name="buttonAddDex" Content="Add" HorizontalAlignment="Left" Margin="126,85,0,0" VerticalAlignment="Top" Width="40" Height="17"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <ComboBox x:Name="listboxNetwork" HorizontalAlignment="Left" Margin="191,5,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</UserControl>

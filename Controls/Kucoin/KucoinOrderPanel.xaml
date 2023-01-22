@@ -1,0 +1,45 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VicTool.Controls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="VicTool.Controls.KucoinOrderPanel"
+             mc:Ignorable="d" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}" Width="326.726" Height="184.935">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="19"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="488"/>
+        </Grid.ColumnDefinitions>
+
+        <xctk:DecimalUpDown x:Name="decimalUpDownBuyPrice" Margin="0,44,0,0" ShowButtonSpinner="False" Grid.Column="1" Height="20" VerticalAlignment="Top" Value="{Binding Path=BuyPrice}"/>
+        <xctk:DecimalUpDown x:Name="decimalUpDownSellPrice" Margin="0,44,0,0" ShowButtonSpinner="False" Grid.Column="3" Height="20" VerticalAlignment="Top" Value="{Binding Path=SellPrice}"/>
+        <xctk:DecimalUpDown x:Name="decimalUpDownBuyAmount" Margin="0,80,0,0" ShowButtonSpinner="False" Grid.Column="1" Height="20" VerticalAlignment="Top" Value="{Binding Path=BuyVolumeBase}"/>
+        <xctk:DecimalUpDown x:Name="decimalUpDownSellAmount" Margin="0,80,0,0" ShowButtonSpinner="False" Grid.Column="3" Height="20" VerticalAlignment="Top" Value="{Binding Path=SellVolumeToken}"/>
+        <Button x:Name="buttonBuy" Content="Buy" Margin="0,152,0,0" Grid.Column="1" Height="20" VerticalAlignment="Top"/>
+        <Button x:Name="buttonSell" Content="Sell" Margin="0,152,0,0" Grid.Column="3" Height="20" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,105,0,0" TextWrapping="Wrap" Text="Available:" VerticalAlignment="Top" FontSize="10" Grid.Column="1" Height="13" Width="42"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,118,0,0" TextWrapping="Wrap" Text="Volume:" VerticalAlignment="Top" FontSize="10" Grid.Column="1" Height="13" Width="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="2,105,0,0" TextWrapping="Wrap" Text="Available:" VerticalAlignment="Top" FontSize="10" Grid.Column="3" Height="13" Width="42"/>
+        <TextBlock HorizontalAlignment="Left" Margin="2,118,0,0" TextWrapping="Wrap" Text="Volume:" VerticalAlignment="Top" FontSize="10" Grid.Column="3" Height="13" Width="35"/>
+        <TextBlock x:Name="textAvailableBuyBase" Margin="0,105,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="10" Grid.Column="1" Height="13">
+            <Run Text="{Binding Path=BaseBalance}"></Run>
+            <Run Text="{Binding Path=Base}"></Run>
+        </TextBlock>
+        <TextBlock x:Name="textVolumeBuyBase" HorizontalAlignment="Right" Margin="0,118,0,0"  Text="{Binding Path=BuyVolumeBase}" VerticalAlignment="Top" FontSize="10" Grid.Column="1" Height="13" Width="61"/>
+        <xctk:DecimalUpDown x:Name="decimalUpDownBuyVolumeToken" HorizontalAlignment="Left" Margin="67,131,0,0" VerticalAlignment="Top" ShowButtonSpinner="False" Value="{Binding Path=BuyVolumeToken}" FontSize="10" Grid.Column="1" Height="15" Width="47" Padding="0" UseLayoutRounding="True" VerticalContentAlignment="Center"/>
+        <TextBlock x:Name="textVolumeBuyBaseTicker" HorizontalAlignment="Right" Margin="0,131,0,0"  Text="{Binding Path=Token}" VerticalAlignment="Top" FontSize="10" Grid.Column="1" Height="13" Width="24"/>
+        <TextBlock x:Name="textAvailableSellToken" HorizontalAlignment="Right" Margin="0,105,0,0" VerticalAlignment="Top" FontSize="10" Grid.Column="3" Height="13">
+            <Run Text="{Binding Path=TokenBalance}"></Run>
+            <Run Text="{Binding Path=Token}"></Run>
+        </TextBlock>
+        <TextBlock x:Name="textVolumeSellToken" HorizontalAlignment="Right" Margin="0,118,0,0"  Text="{Binding Path=SellVolumeToken}" VerticalAlignment="Top" FontSize="10" Grid.Column="3" Height="13" Width="61"/>
+        <xctk:DecimalUpDown x:Name="decimalUpDownSellVolumeToken" HorizontalAlignment="Left" Margin="66,131,0,0" VerticalAlignment="Top" ShowButtonSpinner="False" Value="{Binding Path=SellVolumeBase}" FontSize="10" Grid.Column="3" Height="15" Width="47" Padding="0" UseLayoutRounding="True" VerticalContentAlignment="Center"/>
+        <TextBlock x:Name="textVolumeSellTokenTicker" HorizontalAlignment="Right" Margin="0,131,0,0"  Text="{Binding Path=Base}" VerticalAlignment="Top" FontSize="10" Grid.Column="3" Height="13" Width="24"/>
+        <ComboBox x:Name="comboBoxSymbol" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+
+    </Grid>
+</UserControl>
