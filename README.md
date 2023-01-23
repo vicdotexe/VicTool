@@ -18,3 +18,9 @@ It also included a telegram bot which would:
 - Listen for commands to: perform trades with parameters, switch assets, and query prices.
 
 A risky feature I implemented was an automated arbitrage action, where if the appropriate conditions had been met, it would sell or buy on one exchange, immediately transfer the profits to another wallet and perform the opposite action on the other exchange, resulting in a profit while maintaining the original quantity, or better, of an asset.
+
+This is a screenshot of it's current state without the working API
+![screenshot](https://res.cloudinary.com/dadxsisd4/image/upload/v1674513376/screenshots/victoolss1_slwor1.png)
+
+Here is an older screenshot that I managed to dig up of it before it's current state (but still functional) with some (probably hard to decipher) logging of a trade being automated.
+![screenshot](https://res.cloudinary.com/dadxsisd4/image/upload/v1674514150/screenshots/ss2_ls4cwv.png)
